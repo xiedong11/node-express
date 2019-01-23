@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 
 //引入vip路由模块
 var vipRouter = require('./routes/vip');
+var apiRouter = require('./routes/api')
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter); //分配根目录下的请求给index模块去处理
 app.use('/users', usersRouter);//分配users目录下的请求给users模块去处理
 app.use('/vip', vipRouter);
+app.use('/api',apiRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
